@@ -24,13 +24,15 @@ class Deck(Cards):
         self.mycardset = []
         for n in suites:
             for c in values:
-                for v in c.values():
+                #for k in c.keys():
+                   k = list(c.keys())[0]
+                   #print('Deck.__init__(): k = ', k, 'values[c[k]]=', c[k], 'c = ', c)
                    #if v == 1:
                    #    v = 'ace'
-                   cardName = str(v)+" "+"of"+" "+n
+                   cardName = k+" "+"of"+" "+n
                    #self.mycardset.append({(c)+" "+"of"+" "+n:})
-                   self.mycardset.append({cardName:v})
-                   self.mycardset
+                   self.mycardset.append({cardName:c[k]})
+                   #self.mycardset
 
     # Method to remove a card from the deck
     def popCard(self):
